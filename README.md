@@ -2,6 +2,10 @@
 
 XeroxLab is a browser-based copy-machine degradation tool.
 
+https://aacd164.github.io/Xeroxizer/
+
+https://www.aarondey.design/
+
 
 ## Presets
 
