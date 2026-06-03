@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xeroxizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <aside class="sidebar">
+      <section class="brand">
+        <p class="eyebrow">Browser-based copy degradation tool</p>
+        <!--
+          Use data-text attribute so CSS can apply layered effects on the
+          product name.  The actual text content remains simple but the
+          styling defined in style.css will give the logo a vibrant,
+          multi‑colour appearance reminiscent of misregistered CMYK
+          prints.  Changing the text here updates the logo everywhere.
+        -->
+        <h1 data-text="Xeroxizer">Xeroxizer</h1>
+        <p>Upload an image and build realistic photocopy, scanner, and toner degradation effects.</p>
+      </section>
+
+      <label class="upload-card" for="imageUpload">
+        <input id="imageUpload" type="file" accept="image/*" />
+        <span class="upload-icon">↥</span>
+        <strong>Upload image</strong>
+        <small>JPG / PNG / WEBP / GIF</small>
+      </label>
+
+      <section class="panel">
+        <h2>Copy Preset</h2>
+        <div class="preset-grid">
+          <button class="preset active" data-preset="firstgen">First Generation Xerox</button>
+          <button class="preset" data-preset="fifthgen">5th Generation Copy</button>
+          <button class="preset" data-preset="twentieth">20th Generation Copy</button>
+          <button class="preset" data-preset="library">Library Book Scan</button>
+          <button class="preset" data-preset="office1998">Office Scanner 1998</button>
+          <button class="preset" data-preset="flyer1994">Underground Flyer 1994</button>
+          <button class="preset" data-preset="artschool">Art School Photocopy</button>
+          <button class="preset" data-preset="broken">Broken Copier</button>
+          <button class="preset" data-preset="colourcopy">Colour Copy</button>
+        </div>
+      </section>
+
+      
+      <section class="panel">
+        <h2>Controls</h2>
+
+        <label>
+          Generation Loss
+          <input id="lossRange" type="range" min="0" max="100" value="28" />
+        </label>
+
+        <label>
+          Toner Spread
+          <input id="tonerRange" type="range" min="0" max="100" value="34" />
+        </label>
+
+        <label>
+          Toner Density
+          <input id="densityRange" type="range" min="0" max="100" value="52" />
+        </label>
+
+        <label>
+          Scanner Dirt
+          <input id="dirtRange" type="range" min="0" max="100" value="48" />
+        </label>
+<label>
+          Scanner Lines
+          <input id="lineRange" type="range" min="0" max="100" value="18" />
+        </label>
+
+        <label>
+          Misfeed / Skew
+          <input id="skewRange" type="range" min="-45" max="45" value="4" />
+        </label>
+
+        <label>
+          Double Exposure
+          <input id="doubleRange" type="range" min="0" max="100" value="8" />
+        </label>
+
+        <label>
+          Edge Fill
+          <input id="edgeRange" type="range" min="70" max="105" value="96" />
+        </label>
+
+        <label>
+          Paper Size / Crop Mode
+          <select id="paperMode">
+            <option value="fitimage">Fit to Image</option>
+            <option value="letter" selected>Letter</option>
+            <option value="a4">A4</option>
+            <option value="tabloid">Tabloid</option>
+            <option value="square">Square</option>
+            <option value="poster">Poster</option>
+            <option value="receipt">Receipt</option>
+            <option value="zine">Zine Page</option>
+            <option value="flyer">Flyer</option>
+          </select>
+        </label>
+
+        <label>
+          Copier Border
+          <select id="borderMode">
+            <option value="none">No Border</option>
+            <option value="slight" selected>Slight Scan Edge</option>
+            <option value="blackedge">Black Photocopy Edge</option>
+            <option value="crooked">Crooked Page on Glass</option>
+            <option value="book">Book Scan Shadow</option>
+            <option value="misaligned">Misaligned Paper Edge</option>
+          </select>
+        </label>
+
+        <!-- Fold and stamp controls removed as requested -->
+      </section>
+<section class="panel">
+        <h2>Output</h2>
+        <button id="randomizeBtn">Randomize</button>
+        <button id="resetBtn">Reset</button>
+        <button id="downloadBtn" class="primary">Export PNG</button>
+      </section>
+
+      <!-- Footer with credit -->
+      <footer class="footer">
+        <img src="Asset 15@0.5x.png" alt="Aaron Dey logo" />
+        <span>Made by <a href="https://aarondey.design" target="_blank" rel="noopener">Aaron Dey</a></span>
+      </footer>
+    </aside>
+
+    <section class="stage">
+      <div class="topbar">
+        <span id="statusText">No image loaded</span>
+        <span>Xeroxizer / generation loss simulator</span>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="canvas" width="1400" height="1000"></canvas>
+        <canvas id="beforeCanvas" width="1400" height="1000"></canvas>
+        <div id="compareHandle" class="compare-handle">
+          <span>Before</span>
+          <span>After</span>
+        </div>
+      </div>
+
+      <div id="emptyState" class="empty">
+        <h2>Xeroxizer</h2>
+        <p>Drop an image here or use the upload button to start.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
