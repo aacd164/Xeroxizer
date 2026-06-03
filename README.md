@@ -1,8 +1,7 @@
-# XeroxLab V3
+# XeroxLab 
 
 XeroxLab is a browser-based copy-machine degradation tool.
 
-This version removes the old gimmicky presets and focuses on realistic photocopy generation loss.
 
 ## Presets
 
@@ -36,24 +35,6 @@ This version removes the old gimmicky presets and focuses on realistic photocopy
 - Added more realistic edge wear
 - Made uploaded images fill closer to the copy edge instead of sitting with huge empty margins
 
-## How to use
-
-1. Open `index.html`.
-2. Upload an image.
-3. Choose a preset.
-4. Adjust controls.
-5. Download PNG.
-
-## GitHub Pages
-
-Upload these files to a repository:
-
-- `index.html`
-- `style.css`
-- `script.js`
-- `README.md`
-
-Then enable Pages from `main` and `/root`.
 
 
 ## V4 changes
@@ -193,7 +174,7 @@ Added the requested creative controls:
 - Vertical, horizontal, tri-fold, book crease, and corner fold now include displacement plus highlight/shadow shaping.
 
 
-## V11 Apple-style UI changes
+## V11 UI changes
 
 - Rebuilt visual interface with Apple HIG-inspired hierarchy.
 - Uses system type, softer cards, larger touch targets, rounded controls, subtle translucency, and cleaner spacing.
@@ -201,7 +182,7 @@ Added the requested creative controls:
 - Kept all V10 functionality intact.
 
 
-## V12 Apple-clean UI changes
+## V12 UI changes
 
 - Removed the coloured/beige background.
 - Reworked the app around Apple-style neutral whites and system greys.
